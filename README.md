@@ -19,7 +19,7 @@
     <a href="https://github.com/jsun994/redux-store"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://redux-store-mern.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/jsun994/redux-store">Report Bug</a>
     ·
@@ -54,7 +54,7 @@
 ## About The Project
 
 ![media1](./assets/ss1.png)
-Deployed - [Heroku]()
+Deployed - [Heroku](https://redux-store-mern.herokuapp.com/)
 
 ### Built With
 
