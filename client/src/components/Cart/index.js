@@ -64,7 +64,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+          🍿
         </span>
       </div>
     );
@@ -93,12 +93,11 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <h3>
+        <h4>
           <span role="img" aria-label="shocked">
-            😱
           </span>
-          You haven't added anything to your cart yet!
-        </h3>
+          you haven't added anything!
+        </h4>
       )}
     </div>
   );

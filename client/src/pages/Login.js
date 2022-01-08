@@ -38,7 +38,7 @@ function Login(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="email">Email address:</label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="email@mail.com"
             name="email"
             type="email"
             id="email"
@@ -57,7 +57,7 @@ function Login(props) {
         </div>
         {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+            <p className="error-text">credentials are incorrect</p>
           </div>
         ) : null}
         <div className="flex-row flex-end">

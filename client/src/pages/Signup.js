@@ -6,10 +6,11 @@ import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    try {
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -20,6 +21,9 @@ function Signup(props) {
     });
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const handleChange = (event) => {
@@ -39,7 +43,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="firstName">First Name:</label>
           <input
-            placeholder="First"
+            placeholder="first"
             name="firstName"
             type="firstName"
             id="firstName"
@@ -49,7 +53,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="lastName">Last Name:</label>
           <input
-            placeholder="Last"
+            placeholder="last"
             name="lastName"
             type="lastName"
             id="lastName"
@@ -59,7 +63,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="email">Email:</label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="email@test.com"
             name="email"
             type="email"
             id="email"
@@ -76,6 +80,11 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        {error ? (
+          <div>
+            <p className="error-text">credentials are incorrect</p>
+          </div>
+        ) : null}
         <div className="flex-row flex-end">
           <button type="submit">Submit</button>
         </div>
