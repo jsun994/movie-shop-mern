@@ -44,7 +44,7 @@ function Nav() {
       <h1>
         <Link to="/">
           <span role="img" aria-label="shopping bag"></span>
-          Vintage Movies
+          📽 Vintage Movies
         </Link>
       </h1>
 
